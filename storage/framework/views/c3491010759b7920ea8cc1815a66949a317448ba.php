@@ -6,22 +6,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
-    <link href="{{('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/price-range.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/animate.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/main.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/responsive.css')}}" rel="stylesheet">
+    <link href="<?php echo e(('public/frontend/css/bootstrap.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(('public/frontend/css/font-awesome.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(('public/frontend/css/prettyPhoto.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(('public/frontend/css/price-range.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(('public/frontend/css/animate.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(('public/frontend/css/main.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(('public/frontend/css/responsive.css')); ?>" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
 <![endif]-->       
-    <link rel="shortcut icon" href="{{('public/frontend/images/favicon.ico')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{('public/frontend/images/nokia.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{('public/frontend/images/oppo.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{('public/frontend/images/vivo.png')}}">
-    <link rel="apple-touch-icon-precomposed" href="{{('public/frontend/images/iphone.png')}}">
+    <link rel="shortcut icon" href="<?php echo e(('public/frontend/images/favicon.ico')); ?>">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo e(('public/frontend/images/nokia.png')); ?>">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo e(('public/frontend/images/oppo.png')); ?>">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo e(('public/frontend/images/vivo.png')); ?>">
+    <link rel="apple-touch-icon-precomposed" href="<?php echo e(('public/frontend/images/iphone.png')); ?>">
 </head><!--/head-->
 
 <body>
@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="{{('public/frontend/images/logo.png')}}" alt="" /></a>
+                            <a href="index.html"><img src="<?php echo e(('public/frontend/images/logo.png')); ?>" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right">
                             <div class="btn-group">
@@ -112,7 +112,7 @@
                         </div>
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="{{URL::to('/TrangChu')}}" class="active">Home</a></li>
+                                <li><a href="<?php echo e(URL::to('/TrangChu')); ?>" class="active">Home</a></li>
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>
@@ -163,8 +163,8 @@
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/nokia-110-4g1.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img sizes="20x20" src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+                                    <img src="<?php echo e(('public/frontend/images/nokia-110-4g1.jpg')); ?>" class="girl img-responsive" alt="" />
+                                    <img sizes="20x20" src="<?php echo e(('public/frontend/images/pricing.png')); ?>"  class="pricing" alt="" />
                                 </div>
                             </div>
                             <div class="item">
@@ -175,8 +175,8 @@
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/oppo-reno5-den-1-org.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+                                    <img src="<?php echo e(('public/frontend/images/oppo-reno5-den-1-org.jpg')); ?>" class="girl img-responsive" alt="" />
+                                    <img src="<?php echo e(('public/frontend/images/pricing.png')); ?>"  class="pricing" alt="" />
                                 </div>
                             </div>
                             
@@ -188,8 +188,8 @@
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/vivo-v20-2021-xanh-hong-1-org.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{('public/frontend/images/pricing.png')}}" class="pricing" alt="" />
+                                    <img src="<?php echo e(('public/frontend/images/vivo-v20-2021-xanh-hong-1-org.jpg')); ?>" class="girl img-responsive" alt="" />
+                                    <img src="<?php echo e(('public/frontend/images/pricing.png')); ?>" class="pricing" alt="" />
                                 </div>
                             </div>
                             
@@ -347,7 +347,7 @@
                      </div><!--/price-range-->
 
                      <div class="shipping text-center"><!--shipping-->
-                        <img src="{{('public/frontend/images/vivo-v20-se-xanh-duong-nhat-1-org.jpg')}}" width="160" height="200" alt="" />
+                        <img src="<?php echo e(('public/frontend/images/vivo-v20-se-xanh-duong-nhat-1-org.jpg')); ?>" width="160" height="200" alt="" />
                     </div><!--/shipping-->
                     
                 </div>
@@ -359,7 +359,7 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="{{('public/frontend/images/product1.jpg')}}" alt="" />
+                                <img src="<?php echo e(('public/frontend/images/product1.jpg')); ?>" alt="" />
                                 <h2>$56</h2>
                                 <p>Easy Polo Black Edition</p>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -401,7 +401,7 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="{{('public/frontend/images/gallery1.jpg')}}" alt="" />
+                                        <img src="<?php echo e(('public/frontend/images/gallery1.jpg')); ?>" alt="" />
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -418,7 +418,7 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="{{('public/frontend/images/gallery4.jpg')}}" alt="" />
+                                        <img src="<?php echo e(('public/frontend/images/gallery4.jpg')); ?>" alt="" />
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -436,7 +436,7 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="{{('public/frontend/images/gallery2.jpg')}}" alt="" />
+                                        <img src="<?php echo e(('public/frontend/images/gallery2.jpg')); ?>" alt="" />
                                         <h2>$56</h2>
                                         <p>Easy Polo Black Edition</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -462,7 +462,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend1.jpg')}}" alt="" />
+                                            <img src="<?php echo e(('public/frontend/images/recommend1.jpg')); ?>" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -475,7 +475,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend2.jpg')}}" alt="" />
+                                            <img src="<?php echo e(('public/frontend/images/recommend2.jpg')); ?>" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -488,7 +488,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend3.jpg')}}" alt="" />
+                                            <img src="<?php echo e(('public/frontend/images/recommend3.jpg')); ?>" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -503,7 +503,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend1.jpg')}}" alt="" />
+                                            <img src="<?php echo e(('public/frontend/images/recommend1.jpg')); ?>" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -516,7 +516,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend2.jpg')}}" alt="" />
+                                            <img src="<?php echo e(('public/frontend/images/recommend2.jpg')); ?>" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -529,7 +529,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend3.jpg')}}" alt="" />
+                                            <img src="<?php echo e(('public/frontend/images/recommend3.jpg')); ?>" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -568,7 +568,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe1.png')}}" alt="" />
+                                    <img src="<?php echo e(('public/frontend/images/iframe1.png')); ?>" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -583,7 +583,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe2.png')}}" alt="" />
+                                    <img src="<?php echo e(('public/frontend/images/iframe2.png')); ?>" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -598,7 +598,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe3.png')}}" alt="" />
+                                    <img src="<?php echo e(('public/frontend/images/iframe3.png')); ?>" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -613,7 +613,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe4.png')}}" alt="" />
+                                    <img src="<?php echo e(('public/frontend/images/iframe4.png')); ?>" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -626,7 +626,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
-                        <img src="{{('public/frontend/images/map.png')}}" alt="" />
+                        <img src="<?php echo e(('public/frontend/images/map.png')); ?>" alt="" />
                         <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
                     </div>
                 </div>
@@ -713,11 +713,11 @@
 
 
 
-<script src="{{('public/frontend/js/jquery.js')}}"></script>
-<script src="{{('public/frontend/js/bootstrap.min.js')}}"></script>
-<script src="{{('public/frontend/js/jquery.scrollUp.min.js')}}"></script>
-<script src="{{('public/frontend/js/price-range.js')}}"></script>
-<script src="{{('public/frontend/js/jquery.prettyPhoto.js')}}"></script>
-<script src="{{('public/frontend/js/main.js')}}"></script>
+<script src="<?php echo e(('public/frontend/js/jquery.js')); ?>"></script>
+<script src="<?php echo e(('public/frontend/js/bootstrap.min.js')); ?>"></script>
+<script src="<?php echo e(('public/frontend/js/jquery.scrollUp.min.js')); ?>"></script>
+<script src="<?php echo e(('public/frontend/js/price-range.js')); ?>"></script>
+<script src="<?php echo e(('public/frontend/js/jquery.prettyPhoto.js')); ?>"></script>
+<script src="<?php echo e(('public/frontend/js/main.js')); ?>"></script>
 </body>
 </html>

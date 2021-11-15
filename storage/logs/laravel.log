@@ -1,0 +1,10 @@
+[2021-11-09 07:44:41] local.ERROR: exception 'Symfony\Component\Console\Exception\CommandNotFoundException' with message 'Command "server" is not defined.
+
+Did you mean this?
+    serve' in C:\wamp64\www\blog\vendor\symfony\console\Application.php:651
+Stack trace:
+#0 C:\wamp64\www\blog\vendor\symfony\console\Application.php(236): Symfony\Component\Console\Application->find('server')
+#1 C:\wamp64\www\blog\vendor\symfony\console\Application.php(148): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 C:\wamp64\www\blog\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 C:\wamp64\www\blog\artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
