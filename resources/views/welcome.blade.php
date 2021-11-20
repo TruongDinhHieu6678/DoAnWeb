@@ -1,3 +1,4 @@
+<!--trang home-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,22 +7,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
-    <link href="{{('public/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/price-range.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/animate.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/main.css')}}" rel="stylesheet">
-    <link href="{{('public/frontend/css/responsive.css')}}" rel="stylesheet">
+    <link href="{{('public/frondend/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{('public/frondend/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{('public/frondend/css/prettyPhoto.css')}}" rel="stylesheet">
+    <link href="{{('public/frondend/css/price-range.css')}}" rel="stylesheet">
+    <link href="{{('public/frondend/css/animate.css')}}" rel="stylesheet">
+    <link href="{{('public/frondend/css/main.css')}}" rel="stylesheet">
+    <link href="{{('public/frondend/css/responsive.css')}}" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
 <![endif]-->       
-    <link rel="shortcut icon" href="{{('public/frontend/images/favicon.ico')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{('public/frontend/images/nokia.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{('public/frontend/images/oppo.png')}}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{('public/frontend/images/vivo.png')}}">
-    <link rel="apple-touch-icon-precomposed" href="{{('public/frontend/images/iphone.png')}}">
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png')}">
 </head><!--/head-->
 
 <body>
@@ -51,13 +52,52 @@
                 </div>
             </div>
         </div><!--/header_top-->
+
+        <div class="header-bottom"><!--header-bottom-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="mainmenu pull-left">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <li><a href="{{URL::to('/trang-chu')}}">Trang Chủ</a></li>
+                                <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="shop.html">Sản Phẩm</a></li>
+
+                                    </ul>
+                                </li> 
+                                <li class="dropdown"><a href="#" class="active">Tin tức<i class="fa fa-angle-down"></i></a>
+
+                                </li> 
+                                <li><a href="404.html">Giỏ hàng</a></li>
+                                <li><a href="contact-us.html">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="search_box pull-right">
+                            <input type="text" placeholder="Search"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-bottom-->
+
         
         <div class="header-middle"><!--header-middle-->
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="{{('public/frontend/images/logo.png')}}" alt="" /></a>
+                            <a href="index.html"><img src="{{('public/fronden/images/logo.png')}}" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right">
                             <div class="btn-group">
@@ -90,7 +130,7 @@
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                                 <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                 <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                                <li><a href="{{URL::to('/Login')}}"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
                             </ul>
                         </div>
                     </div>
@@ -98,49 +138,7 @@
             </div>
         </div><!--/header-middle-->
 
-        <div class="header-bottom"><!--header-bottom-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="mainmenu pull-left">
-                            <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="{{URL::to('/TrangChu')}}" class="active">Home</a></li>
-                                <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li> 
-                                        <li><a href="checkout.html">Checkout</a></li> 
-                                        <li><a href="cart.html">Cart</a></li> 
-                                        <li><a href="login.html">Login</a></li> 
-                                    </ul>
-                                </li> 
-                                <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-                                        <li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li> 
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="search_box pull-right">
-                            <input type="text" placeholder="Search"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!--/header-bottom-->
+
     </header><!--/header-->
     
     <section id="slider"><!--slider-->
@@ -163,8 +161,8 @@
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/nokia-110-4g1.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img sizes="20x20" src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+                                    <img src="{{('public/frondend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{('public/frondend/images/pricing.png')}}"  class="pricing" alt="" />
                                 </div>
                             </div>
                             <div class="item">
@@ -175,8 +173,8 @@
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/oppo-reno5-den-1-org.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{('public/frontend/images/pricing.png')}}"  class="pricing" alt="" />
+                                    <img src="{{('public/frondend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{('public/frondend/images/pricing.png')}}"  class="pricing" alt="" />
                                 </div>
                             </div>
                             
@@ -188,8 +186,8 @@
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frontend/images/vivo-v20-2021-xanh-hong-1-org.jpg')}}" class="girl img-responsive" alt="" />
-                                    <img src="{{('public/frontend/images/pricing.png')}}" class="pricing" alt="" />
+                                    <img src="{{('public/frondend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{('public/frondend/images/pricing.png')}}" class="pricing" alt="" />
                                 </div>
                             </div>
                             
@@ -208,349 +206,54 @@
         </div>
     </section><!--/slider-->
     
-    <section>
+    <section><!--container-->
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
                     <div class="left-sidebar">
-                        <h2>Category</h2>
+                        <h2>Danh Mục Sản Phẩm</h2>
                         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            Sportswear
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="sportswear" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li><a href="#">Nike </a></li>
-                                            <li><a href="#">Under Armour </a></li>
-                                            <li><a href="#">Adidas </a></li>
-                                            <li><a href="#">Puma</a></li>
-                                            <li><a href="#">ASICS </a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#mens">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            Mens
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="mens" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li><a href="#">Fendi</a></li>
-                                            <li><a href="#">Guess</a></li>
-                                            <li><a href="#">Valentino</a></li>
-                                            <li><a href="#">Dior</a></li>
-                                            <li><a href="#">Versace</a></li>
-                                            <li><a href="#">Armani</a></li>
-                                            <li><a href="#">Prada</a></li>
-                                            <li><a href="#">Dolce and Gabbana</a></li>
-                                            <li><a href="#">Chanel</a></li>
-                                            <li><a href="#">Gucci</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#womens">
-                                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                            Womens
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="womens" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <ul>
-                                            <li><a href="#">Fendi</a></li>
-                                            <li><a href="#">Guess</a></li>
-                                            <li><a href="#">Valentino</a></li>
-                                            <li><a href="#">Dior</a></li>
-                                            <li><a href="#">Versace</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Kids</a></h4>
-                                </div>
+                         @foreach($loaisp as $key => $cate)
+                           <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">{{$cate ->TenLoaiSanPham}}</a></h4>
                             </div>
+                        </div>
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Fashion</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Households</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Interiors</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Clothing</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Bags</a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Shoes</a></h4>
-                                </div>
-                            </div>
-                        </div><!--/category-products-->
+                        @endforeach
+                    </div><!--/category-products-->
 
-                        <div class="brands_products"><!--brands_products-->
-                            <h2>Brands</h2>
-                            <div class="brands-name">
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-                                    <li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-                                    <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
-                                    <li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-                                    <li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
-                                    <li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-                                    <li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
-                                </ul>
-                            </div>
-                        </div><!--/brands_products-->
-                        
-                        <div class="price-range"><!--price-range-->
-                            <h2>Price Range</h2>
-                            <div class="well text-center">
-                             <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-                             <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-                         </div>
-                     </div><!--/price-range-->
+                    <div class="brands_products"><!--brands_products-->
+                        <h2>Thương hiệu</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
+                                <li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+                                <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
+                                <li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
+                                <li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
+                                <li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
+                                <li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
 
-                     <div class="shipping text-center"><!--shipping-->
-                        <img src="{{('public/frontend/images/vivo-v20-se-xanh-duong-nhat-1-org.jpg')}}" width="160" height="200" alt="" />
+
+                    <div class="shipping text-center"><!--shipping-->
+                        <img src="{{('public/frondend/images/shipping.jpg')}}" alt="" />
                     </div><!--/shipping-->
                     
                 </div>
             </div>
 
-            <div class="features_items"><!--features_items-->
-                <h2 class="title text-center">Features Items</h2>
-                <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                        <div class="single-products">
-                            <div class="productinfo text-center">
-                                <img src="{{('public/frontend/images/product1.jpg')}}" alt="" />
-                                <h2>$56</h2>
-                                <p>Easy Polo Black Edition</p>
-                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                            </div>
-                            <div class="product-overlay">
-                                <div class="overlay-content">
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="choose">
-                            <ul class="nav nav-pills nav-justified">
-                                <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div><!--features_items-->
-            <div class="category-tab"><!--category-tab-->
-                <div class="col-sm-12">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tshirt" data-toggle="tab">T-Shirt</a></li>
-                        <li><a href="#blazers" data-toggle="tab">Blazers</a></li>
-                        <li><a href="#sunglass" data-toggle="tab">Sunglass</a></li>
-                        <li><a href="#kids" data-toggle="tab">Kids</a></li>
-                        <li><a href="#poloshirt" data-toggle="tab">Poloshirt</a></li>
-
-                    </ul>
-                </div>
-
-                <div class="tab-content">
-                    <div class="tab-pane fade active in" id="tshirt" >
-                        <div class="col-sm-3">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="{{('public/frontend/images/gallery1.jpg')}}" alt="" />
-                                        <h2>$56</h2>
-                                        <p>Easy Polo Black Edition</p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="tab-pane fade" id="tshirt" >
-                        <div class="col-sm-3">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="{{('public/frontend/images/gallery4.jpg')}}" alt="" />
-                                        <h2>$56</h2>
-                                        <p>Easy Polo Black Edition</p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="tab-pane fade" id="tshirt" >
-                        <div class="col-sm-1">
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="{{('public/frontend/images/gallery2.jpg')}}" alt="" />
-                                        <h2>$56</h2>
-                                        <p>Easy Polo Black Edition</p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-            </div><!--/category-tab-->
-            <div class="recommended_items"><!--recommended_items-->
-                <h2 class="title text-center">recommended items</h2>
-
-                <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="item active">   
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend1.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend2.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend3.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">  
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend1.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend2.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="{{('public/frontend/images/recommend3.jpg')}}" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>          
-                </div>
+            <div class="col-sm-9 padding-right">
+                <!---home--->                     
+                @yield('noidung')
             </div>
+
         </div>
     </div>
-</div>
 </section>
 
 <footer id="footer"><!--Footer-->
@@ -568,7 +271,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe1.png')}}" alt="" />
+                                    <img src="{{('public/frondend/images/iframe1.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -583,7 +286,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe2.png')}}" alt="" />
+                                    <img src="{{('public/frondend/images/iframe2.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -598,7 +301,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe3.png')}}" alt="" />
+                                    <img src="{{('public/frondend/images/iframe3.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -613,7 +316,7 @@
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="{{('public/frontend/images/iframe4.png')}}" alt="" />
+                                    <img src="{{('public/frondend/images/iframe4.png')}}" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -626,7 +329,7 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
-                        <img src="{{('public/frontend/images/map.png')}}" alt="" />
+                        <img src="{{('public/frondend/images/map.png')}}" alt="" />
                         <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
                     </div>
                 </div>
@@ -713,11 +416,11 @@
 
 
 
-<script src="{{('public/frontend/js/jquery.js')}}"></script>
-<script src="{{('public/frontend/js/bootstrap.min.js')}}"></script>
-<script src="{{('public/frontend/js/jquery.scrollUp.min.js')}}"></script>
-<script src="{{('public/frontend/js/price-range.js')}}"></script>
-<script src="{{('public/frontend/js/jquery.prettyPhoto.js')}}"></script>
-<script src="{{('public/frontend/js/main.js')}}"></script>
+<script src="{{('public/frondend/js/jquery.js')}}"></script>
+<script src="{{('public/frondend/js/bootstrap.min.js')}}"></script>
+<script src="{{('public/frondend/js/jquery.scrollUp.min.js')}}"></script>
+<script src="{{('public/frondend/js/price-range.js')}}"></script>
+<script src="{{('public/frondend/js/jquery.prettyPhoto.js')}}"></script>
+<script src="{{('public/frondend/js/main.js')}}"></script>
 </body>
 </html>
