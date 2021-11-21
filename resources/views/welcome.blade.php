@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Home | Supper-Shopper</title>
     <link href="{{('public/frondend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{('public/frondend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{('public/frondend/css/prettyPhoto.css')}}" rel="stylesheet">
@@ -33,8 +33,8 @@
                     <div class="col-sm-6">
                         <div class="contactinfo">
                             <ul class="nav nav-pills">
-                                <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> +0900123456</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> Team@deptrai.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -70,14 +70,14 @@
                                 <li><a href="{{URL::to('/trang-chu')}}">Trang Chủ</a></li>
                                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Sản Phẩm</a></li>
+                                        <li><a href="{{URL::to('/Home')}}">Sản Phẩm</a></li>
 
                                     </ul>
                                 </li> 
                                 <li class="dropdown"><a href="#" class="active">Tin tức<i class="fa fa-angle-down"></i></a>
 
                                 </li> 
-                                <li><a href="404.html">Giỏ hàng</a></li>
+                                <li><a href="{{URL::to('/Cart')}}">Giỏ hàng</a></li>
                                 <li><a href="contact-us.html">Liên hệ</a></li>
                             </ul>
                         </div>
@@ -126,10 +126,9 @@
                     <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i> Tài Khoản</a></li>
                                 <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                                <li><a href="{{URL::to('/Cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
                                 <li><a href="{{URL::to('/Login')}}"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
                             </ul>
                         </div>
@@ -155,38 +154,38 @@
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
-                                    <h2>Free E-Commerce Template</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    <h1><span>Supper</span>-SHOPPER</h1>
+                                    <h2>Oppo A74-5G-Bạc</h2>
+                                    <p>Các sản phẩm hot đang được giảm giá. </p>
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frondend/images/girl1.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{('public/frondend/images/oppo-a74-5g-bac-1-org.jpg')}}" class="girl img-responsive" alt="" />
                                     <img src="{{('public/frondend/images/pricing.png')}}"  class="pricing" alt="" />
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
-                                    <h2>100% Responsive Design</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    <h1><span>Supper</span>-SHOPPER</h1>
+                                    <h2>Oppo-A15s</h2>
+                                    <p>Các sản phẩm hot đang được giảm giá. </p>
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frondend/images/girl2.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{('public/frondend/images/oppo-a15s-xanh-1-org.jpg')}}" class="girl img-responsive" alt="" />
                                     <img src="{{('public/frondend/images/pricing.png')}}"  class="pricing" alt="" />
                                 </div>
                             </div>
                             
                             <div class="item">
                                 <div class="col-sm-6">
-                                    <h1><span>E</span>-SHOPPER</h1>
-                                    <h2>Free Ecommerce Template</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    <h1><span>Supper</span>-SHOPPER</h1>
+                                    <h2>Vivo - V20</h2>
+                                    <p>Các sản phẩm hot đang được giảm giá. </p>
                                     <button type="button" class="btn btn-default get">Get it now</button>
                                 </div>
                                 <div class="col-sm-6">
-                                    <img src="{{('public/frondend/images/girl3.jpg')}}" class="girl img-responsive" alt="" />
+                                    <img src="{{('public/frondend/images/vivo-v20-2021-203721-063746.jpg')}}" class="girl img-responsive" alt="" />
                                     <img src="{{('public/frondend/images/pricing.png')}}" class="pricing" alt="" />
                                 </div>
                             </div>
@@ -211,32 +210,35 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="left-sidebar">
+
                         <h2>Danh Mục Sản Phẩm</h2>
                         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
 
-                         @foreach($loaisp as $key => $cate)
-                           <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">{{$cate ->TenLoaiSanPham}}</a></h4>
+                           @foreach($loaisp as $key => $cate)
+                           <a href="#"><!--danh mục loại sản phẩm thêm link để trang home xuất sp tương ứng với database-->
+                             <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">{{$cate ->TenLoaiSanPham}}</a></h4>
+                                </div>
                             </div>
-                        </div>
-
+                        </a>
                         @endforeach
+
                     </div><!--/category-products-->
 
                     <div class="brands_products"><!--brands_products-->
                         <h2>Thương hiệu</h2>
+                        @foreach($all_SX as $key=>$TH)
+                        <a href="#"><!--thương hiệu sản phẩm thêm link để trang home xuất sp tương ứng với database-->
                         <div class="brands-name">
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-                                <li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-                                <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
-                                <li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-                                <li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
-                                <li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-                                <li><a href="#"> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+
+                                <li><a href="#"> <span class="pull-right"></span>{{$TH->TenHangSanXuat}}</a></li>
+                                
                             </ul>
                         </div>
+                        </a>
+                        @endforeach
                     </div><!--/brands_products-->
 
 
@@ -248,7 +250,8 @@
             </div>
 
             <div class="col-sm-9 padding-right">
-                <!---home--->                     
+                <!---home--->    
+                             
                 @yield('noidung')
             </div>
 
@@ -262,7 +265,7 @@
             <div class="row">
                 <div class="col-sm-2">
                     <div class="companyinfo">
-                        <h2><span>e</span>-shopper</h2>
+                        <h2><span>Supper</span>-shopper</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
                     </div>
                 </div>
