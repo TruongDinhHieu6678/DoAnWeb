@@ -1,47 +1,69 @@
-<!--trang logIn vào admin và user-->
-<!DOCTYPE html>
-<head>
-<title>Trang Đăng Nhập</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- bootstrap-css -->
-<link rel="stylesheet" href="{{('public/frondend/css/bootstrap.min.css')}}" >
-<!-- //bootstrap-css -->
-<!-- Custom CSS -->
-<link href="{{('public/frondend/css/style.css')}}" rel='stylesheet' type='text/css' />
-<link href="css/style-responsive.css')}}" rel="stylesheet"/>
-<!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
-<link rel="stylesheet" href="{{('public/frondend/css/font.css')}}" type="text/css"/>
-<link href="{{('public/frondend/css/font-awesome.css')}}" rel="stylesheet"> 
-<!-- //font-awesome icons -->
-<script src="{{('public/frondend/js/jquery2.0.3.min.js')}}"></script>
-</head>
-<body>
-<div class="log-w3">
-<div class="w3layouts-main">
-	<h2>Đăng Nhập</h2>
-		<form action="{{URL::to('/Admin')}}" method="post">
-			<input type="text" class="ggg" name="TenDangNhap" placeholder="Tên đăng nhập" required="">
-			<input type="text" class="ggg" name="MatKhau" placeholder="Mật khẩu" required="">
-			<span><input type="checkbox" />Nhớ tài khoản</span>
-			<h6><a href="#">Quên mật khẩu?</a></h6>
-				<div class="clearfix"></div>
-				<input type="submit" value="Đăng Nhập" name="login">
-		</form>
-		<p>Tạo tài khoản mới: <a href="registration.html">Tạo</a></p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="{{('public/frondend/css/home.css')}}" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container login-container">
+	<div class="row">
+		<div class="col-md-6 login-form-1">
+			<h3>Đăng nhập người dùng</h3>
+			
+			<form action="{{URL::to('/Trang-Chu')}}" method="POST">
+				{{csrf_field()}}
+				<?php 
+				$message_user = Session::get('message');
+				if($message_user){
+					echo $message_user;
+					Session::put('message_user',null);
+				}
+				?>
+				<div class="form-group">
+					<input type="email" class="form-control" name="tenuser" placeholder="Your Email *" value="" />
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" name="matkhauuser" placeholder="Your Password *" value="" />
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btnSubmit" value="Đăng nhập" />
+				</div>
+				<div class="form-group">
+					<a href="{{URL::to('/Forgot-Password')}}" class="ForgetPwd">Quên mật khẩu?</a>
+				</div>
+				<div class="form-group">
+					<a href="{{URL::to('/dang-ky')}}">đăng ký tài khoản mới</a>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-6 login-form-2">
+			<h3>Đăng nhập quản trị</h3>
+
+			<form action="{{URL::to('/Admin-page')}}" method="POST">
+
+				{{csrf_field()}}
+				<?php 
+				$message_ad = Session::get('message1');
+				if($message_ad){
+					echo $message_ad;
+					Session::put('message_ad',null);
+				}
+				?>
+				<div class="form-group">
+					<input type="email" class="form-control" name="tendn" placeholder="Your Email *"/>
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" name="matkhaudn" placeholder="Your Password *"/>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btnSubmit" value="Đăng nhập" />
+				</div>
+				<div class="form-group">
+
+					<div class="form-group">
+					<a href="{{URL::to('/Forgot-Password')}}" class="ForgetPwd">Quên mật khẩu?</a>
+				</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
-</div>
-<script src="{{('public/frondend/js/bootstrap.js')}}"></script>
-<script src="{{('public/frondend/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-<script src="{{('public/frondend/js/scripts.js')}}"></script>
-<script src="{{('public/frondend/js/jquery.slimscroll.js')}}"></script>
-<script src="{{('public/frondend/js/jquery.nicescroll.js')}}"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js')}}"></script><![endif]-->
-<script src="{{('public/frondend/js/jquery.scrollTo.js')}}"></script>
-</body>
-</html>
