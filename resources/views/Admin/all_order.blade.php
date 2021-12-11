@@ -4,7 +4,7 @@
 <div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Liệt kê sản phẩm  
+      Liệt kê Đơn Hàng
     </div>
 
       <?php
@@ -26,28 +26,25 @@
                 <input type="checkbox"><i></i>
               </label>
             </th>
-            <th>Tên sản phẩm</th>
-            <th>Giá Sản Phẩm</th>
-            <th>Ngày Nhập</th>
-            <th>Số lượng</th>
-            <th>Loại sản phẩm</th>
-            <th>Hảng sản xuất</th>
+            <th>Mã Đặt Đơn Hàng</th>
+            <th>Tài Khoản Đặt Hàng</th>
+            <th>Ngày Lập</th>
+            <th>Tổng Thành Tiền</th>
+            <th>Tình Trạng</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
         <tbody>
-          @foreach($all_category_product as $values => $category)
+          @foreach($all_order as $values => $order)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td>{{$category->TenSanPham}}</td>
-            <td><span class="text-ellipsis">{{$category->GiaSanPham}}</span></td>
-            <td><span class="text-ellipsis">{{$category->NgayNhap}}</span></td>
-            <td><span class="text-ellipsis">{{$category->SoLuongTon}}</span></td>
-            <td><span class="text-ellipsis">{{$category->TenLoaiSanPham}}</span></td>
-            <td><span class="text-ellipsis">{{$category->TenHangSanXuat}}</span></td>
+            <td>{{$order->MaDonDatHang}}</td>
+            <td><span class="text-ellipsis">{{$order->TenHienThi}}</span></td>
+            <td><span class="text-ellipsis">{{$order->NgayLap}}</span></td>
+            <td><span class="text-ellipsis">{{$order->TongThanhTien}}</span></td>
+            <td><span class="text-ellipsis">{{$order->TenTinhTrang}}</span></td>
             <td>
-              <a href="{{URL::to('/edit-category-product/'.$category->MaSanPham)}}" class="active styling-edit" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i></a>
-              <a href="{{URL::to('/delete-category-product/'.$category->MaSanPham)}}" class="active styling-edit" ui-toggle-class=""><i class="fa fa-times text-danger text"></i></a>
+              <a href="{{URL::to('/edit-status-order/'.$order->MaDonDatHang)}}" class="active styling-edit" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i></a>
             </td>
           </tr> 
           @endforeach
@@ -62,7 +59,7 @@
         </div>
         <div class="col-sm-7 text-right text-center-xs">                
           <ul class="pagination pagination-sm m-t-none m-b-none">
-              <?php
+          <?php
               $page_focus = Session::get('page_focus');
               $first_page = $page_focus - 6 < 0 ? 1 : ($page_focus-4);
               $number_page = 6;
@@ -74,18 +71,18 @@
                 if($i == $first_page && $page_focus >= 5)
                 {
                   ?>
-                  <li class="<?php echo $Max_page >= $i ? '': 'hide'; ?>"><a href="{{URL::to('/all-category-product/'.($page_focus-1))}}"><i class="fa fa-chevron-left disabled"></i></a></li>
+                  <li class="<?php echo $Max_page >= $i ? '': 'hide'; ?>"><a href="{{URL::to('/all_order/'.($page_focus-1))}}"><i class="fa fa-chevron-left disabled"></i></a></li>
                   <?php
                 }
-                else if($i == $first_page + $number_page-1 )
+                else if($i == $first_page + $number_page-1 && $Max_page-1 > $page_focus)
                 {
                   ?>
-                  <li class="<?php echo $Max_page >= $i ? '': 'hide'; ?>"><a href="{{URL::to('/all-category-product/'.($page_focus+1))}}"><i class="fa fa-chevron-right"></i></a></li>
+                  <li class="<?php echo $Max_page >= $i ? '': 'hide'; ?>"><a href="{{URL::to('/all_order/'.($page_focus+1))}}"><i class="fa fa-chevron-right"></i></a></li>
                   <?php
                 }
                 else if($i != $first_page + $number_page-1){
                   ?>
-                    <li class="<?php echo $i==$page_focus ? 'active':'';echo $Max_page >= $i ? '': 'hide'; ?>"><a href="{{URL::to('/all-category-product/'.$i)}}"><?php echo $i ?></a></li>
+                    <li class="<?php echo $i==$page_focus ? 'active':''; echo $Max_page >= $i ? '': 'hide'; ?>"><a href="{{URL::to('/all_order/'.$i)}}"><?php echo $i ?></a></li>
                 
                   <?php
                 }
