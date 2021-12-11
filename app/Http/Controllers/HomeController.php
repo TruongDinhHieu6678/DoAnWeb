@@ -5,18 +5,33 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 use DB;
+use Mail;
 session_start();
 
 use Illuminate\Http\Request;
 
 class HomeController extends Controller //class đc tạo để điều hướng
 {
+    //hàm show toàn bộ sản phẩm hãng, thương hiệu
     public function index(){
-        $Danhmuc_sp = DB::table('loaisanpham')->get();
-        $SanPham = DB::table('sanpham')->limit(6)->get();
-         $SanPham1 = DB::table('sanpham')->limit(3)->get();
-        //$Danhmuc_sp = DB::table('loaisanpham')->orderby('MaloaiSanPham','desc')->get();
-        return view('page.Home')->with('loaisp',$Danhmuc_sp)->with('all_SP',$SanPham)->with('all_SP1',$SanPham1);//name page home thuộc Home.blade.php 
+        $Danhmuc_sp = DB::table('loaisanpham')->orderby('MaloaiSanPham','desc')->get();//show loại sp (danh muc)
+        $SanPham = DB::table('sanpham')->orderby('MaSanPham','desc')->paginate(6);//show sp mới
+        $SanPhamz_cu = DB::table('sanpham')->orderby('MaSanPham','asc')->paginate(3);//show sp cũ
+        $thuonghieu = DB::table('hangsanxuat')->orderby('MaHangSanXuat','desc')->get();//show hãng sp
+        return view('page.Home')->with('loaisp',$Danhmuc_sp)->with('all_SP',$SanPham)->with('t_h',$thuonghieu)->with('sp_cu',$SanPhamz_cu);//name page home thuộc Home.blade.php 
     }
-   
+
+
+    // test gửi mail
+    public function mail(){
+     $to_name = "Quan";
+     $to_email = "lnquan002@gmail.com";
+     $data = array("name"=>"mail từ tk khách","body"=>"mail test");
+     Mail::send('page.sendmail',$data,function($message) use ($to_name,$to_email){//vào page.sendmail.blade.php lấy nội dung gửi
+        $message->to($to_email)->subject('hiloooo');
+        $message->from($to_email,$to_name);
+    });
+
+     // return Redirect('/')->with('message','');
+ }
 }
