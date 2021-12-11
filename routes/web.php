@@ -51,8 +51,34 @@ Route::get('Product-Interest-page','UserController@Product_Interest');
 
 
 
-//admin page
-Route::get('/Admin-page','AdminController@index' );// cùng 1 page index là khung
+
+//Admin
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/dashboard', [AdminController::class, 'show_dashboard']);
+Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
+Route::get('/logout', [AdminController::class, 'logout']);
+
+
+//Admin-CategoryProduct
+Route::get('/add-category-product', [CategoryProduct::class, 'add_category_product']);
+Route::get('/edit-category-product/{MaSanPham}', [CategoryProduct::class, 'edit_category_product']);
+Route::get('/delete-category-product/{MaSanPham}', [CategoryProduct::class, 'delete_category_product']);
+Route::post('/update-category-product/{MaSanPham}', [CategoryProduct::class, 'update_category_product']);
+Route::get('/all-category-product/{number_page}', [CategoryProduct::class, 'all_category_product']);
+Route::post('/save-category-product', [CategoryProduct::class, 'save_category_product']);
+//Admin-account
+Route::get('/list-account/{number_page}', [AccountController::class, 'list_account']);
+//Admin-order
+Route::get('/all-order/{number_page}', [OrderController::class, 'all_order']);
+Route::get('/edit-status-order/{MaDonHang}', [OrderController::class, 'edit_order_status']);
+Route::post('/update-status-order/{MaDonHang}', [OrderController::class, 'update_status_order']);
+
+//statistics_admin
+Route::get('/statistics-day', [CategoryProduct::class, 'statistics_day']);
+Route::get('/statistics-month', [CategoryProduct::class, 'statistics_month']);
+Route::get('/statistics-year', [CategoryProduct::class, 'statistics_year']);
+Route::get('/statistics-quy', [CategoryProduct::class, 'statistics_quy']);
+
 
 //trang giỏ hàng
 Route::get('/Cart-page','CartController@index' );
