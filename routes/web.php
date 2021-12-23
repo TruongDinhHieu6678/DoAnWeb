@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,20 +19,22 @@ Route::get('/','HomeController@index' );
 Route::get('/trang-chu','HomeController@index' );//trả về hàm HomeController với đường dẫn có /trang-chu
 Route::get('/Trang-Chu','HomeController@index' );
 
+//tìm kiếm
 
+Route::post('/Tim-kiem','HomeController@search' );
 //danh mục sp
 Route::get('/danh-muc-sp/{MaLoaiSanPham}','ProductController@show_danh_muc' );
 //hang sp
 Route::get('/thuong-hieu-sp/{MaHangSanXuat}','ProductController@show_thuong_hieu' );
+//chi tiet sp
 Route::get('/chi-tiet-sp/{MaSanPham}','ProductController@show_chi_tiet_sp' );
+Route::post('/comment-sp/{MaSanPham}','ProductController@comment' );
 
 
 //trang login
 Route::get('/Login-page','LoginController@index' );
-
 Route::post('/Trang-Chu','LoginController@login_user' );
-Route::post('/Admin-page','LoginController@login_admin' );
-
+//Route::post('/Admin-page','LoginController@login_admin' );
 Route::get('/Login-page','LoginController@logout' );
 
 
@@ -39,46 +42,15 @@ Route::get('/Login-page','LoginController@logout' );
 Route::get('/dang-ky','RegisterController@index');
 Route::post('/trang-chu','RegisterController@add_user');
 
+
 //user page
-
 Route::get('/User-page','UserController@index' );
-
-
 Route::get('/Edit-page','UserController@edit');
 Route::post('/User-page','UserController@upload');
 Route::get('Product-Interest-page','UserController@Product_Interest');
 
-
-
-
-
-//Admin
-Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/dashboard', [AdminController::class, 'show_dashboard']);
-Route::post('/admin-dashboard', [AdminController::class, 'dashboard']);
-Route::get('/logout', [AdminController::class, 'logout']);
-
-
-//Admin-CategoryProduct
-Route::get('/add-category-product', [CategoryProduct::class, 'add_category_product']);
-Route::get('/edit-category-product/{MaSanPham}', [CategoryProduct::class, 'edit_category_product']);
-Route::get('/delete-category-product/{MaSanPham}', [CategoryProduct::class, 'delete_category_product']);
-Route::post('/update-category-product/{MaSanPham}', [CategoryProduct::class, 'update_category_product']);
-Route::get('/all-category-product/{number_page}', [CategoryProduct::class, 'all_category_product']);
-Route::post('/save-category-product', [CategoryProduct::class, 'save_category_product']);
-//Admin-account
-Route::get('/list-account/{number_page}', [AccountController::class, 'list_account']);
-//Admin-order
-Route::get('/all-order/{number_page}', [OrderController::class, 'all_order']);
-Route::get('/edit-status-order/{MaDonHang}', [OrderController::class, 'edit_order_status']);
-Route::post('/update-status-order/{MaDonHang}', [OrderController::class, 'update_status_order']);
-
-//statistics_admin
-Route::get('/statistics-day', [CategoryProduct::class, 'statistics_day']);
-Route::get('/statistics-month', [CategoryProduct::class, 'statistics_month']);
-Route::get('/statistics-year', [CategoryProduct::class, 'statistics_year']);
-Route::get('/statistics-quy', [CategoryProduct::class, 'statistics_quy']);
-
+//admin page
+Route::get('/Admin-page','AdminController@index' );// cùng 1 page index là khung
 
 //trang giỏ hàng
 Route::get('/Cart-page','CartController@index' );
@@ -89,3 +61,32 @@ Route::post('/Forgot-Password','ForgotPasswordController@reset');
 Route::get('/Forgot-Password','ForgotPasswordController@index');
 Route::get('/update-new-pass','ForgotPasswordController@Update_New_Password');
 Route::post('/Login-page','ForgotPasswordController@Update_Pass');
+
+
+
+//--------------------------dmin-----------------------------//
+Route::get('/admin','AdminController@index');
+Route::get('/dashboard','AdminController@show_dashboard');
+Route::post('/admin-dashboard','AdminController@dashboard');
+Route::get('/logout', 'AdminController@logout');
+
+
+//Admin-CategoryProduct
+Route::get('/add-category-product', 'CategoryProduct@add_category_product');
+Route::get('/edit-category-product/{MaSanPham}', 'CategoryProduct@edit_category_product');
+Route::get('/delete-category-product/{MaSanPham}', 'CategoryProduct@delete_category_product');
+Route::post('/update-category-product/{MaSanPham}', 'CategoryProduct@update_category_product');
+Route::get('/all-category-product/{number_page}', 'CategoryProduct@all_category_product');
+Route::post('/save-category-product', 'CategoryProduct@save_category_product');
+//Admin-account
+Route::get('/list-account/{number_page}', 'AccountController@list_account');
+//Admin-order
+Route::get('/all-order/{number_page}', 'OrderController@all_order');
+Route::get('/edit-status-order/{MaDonHang}', 'OrderController@edit_order_status');
+Route::post('/update-status-order/{MaDonHang}', 'OrderController@update_status_order');
+
+//statistics
+Route::get('/statistics-day', 'CategoryProduct@statistics_day');
+Route::get('/statistics-month', 'CategoryProduct@statistics_month');
+Route::get('/statistics-year', 'CategoryProduct@statistics_year');
+Route::get('/statistics-quy', 'CategoryProduct@statistics_quy');
