@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 use DB;
-session_start();
 
+session_start();
 
 use Illuminate\Http\Request;
 

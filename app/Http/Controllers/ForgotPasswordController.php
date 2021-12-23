@@ -9,7 +9,6 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use DB;
 use count;
-session_start();
 use Mail;
 use Session;
 use Illuminate\Mail\Mailable;

@@ -7,7 +7,7 @@ use DB;
 use Session;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
-Session_start();
+session_start();
 
 
 class AccountController extends Controller
@@ -18,12 +18,12 @@ class AccountController extends Controller
         //hsx.TenHangSanXuat FROM sanpham sp 
         //JOIN loaisanpham lsp on sp.MaLoaiSanPham = lsp.MaLoaiSanPham 
         //JOIN hangsanxuat hsx ON sp.MaHangSanXuat = hsx.MaHangSanXuat
-        $all_account = DB::table('taikhoan')->where('MaLoaiTaiKhoan',1)
-        ->orderBy('taikhoan.MaTaiKhoan', 'asc')
+        $all_account = DB::table('accountlogin')->where('MaLoaiTaiKhoan',1)
+        ->orderBy('accountlogin.id', 'asc')
         ->get();
         $Max_page = count($all_account) % 5 == 0 ? count($all_account) / 5: ((count($all_account) / 5)+1);
-        $view_account = DB::table('taikhoan')->where('MaLoaiTaiKhoan',1)
-        ->orderBy('taikhoan.MaTaiKhoan', 'asc')
+        $view_account = DB::table('accountlogin')->where('MaLoaiTaiKhoan',1)
+        ->orderBy('accountlogin.id', 'asc')
         ->skip($page_focus*5-5)
         ->take($page_focus*5)
         ->get();

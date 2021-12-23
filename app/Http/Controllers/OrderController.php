@@ -7,8 +7,8 @@ use DB;
 use Session;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
-Session_start();
-
+use Illuminate\Support\Facades\Route;
+session_start();
 
 class OrderController extends Controller
 {
@@ -20,18 +20,18 @@ class OrderController extends Controller
         //JOIN hangsanxuat hsx ON sp.MaHangSanXuat = hsx.MaHangSanXuat
         $all_order = DB::table('dondathang')
         ->join('tinhtrang','dondathang.MaTinhTrang','=','tinhtrang.MaTinhTrang')
-        ->join('taikhoan','taikhoan.MaTaiKhoan','=','dondathang.MaTaiKhoan')
+        ->join('khachhang','khachhang.MaKhachHang','=','dondathang.MaTaiKhoan')
         ->orderBy('dondathang.MaDonDatHang', 'asc')
-        ->select('dondathang.*','tinhtrang.*','taikhoan.*')
+        ->select('dondathang.*','tinhtrang.*','khachhang.*')
         ->get();
         $Max_page = count($all_order) % 5 == 0 ? count($all_order) / 5: ((count($all_order) / 5)+1);
         $view_order = DB::table('dondathang')
         ->join('tinhtrang','dondathang.MaTinhTrang','=','tinhtrang.MaTinhTrang')
-        ->join('taikhoan','taikhoan.MaTaiKhoan','=','dondathang.MaTaiKhoan')
+        ->join('khachhang','khachhang.MaKhachHang','=','dondathang.MaTaiKhoan')
         ->orderBy('dondathang.MaDonDatHang', 'asc')
         ->skip($page_focus*5-5)
         ->take($page_focus*5)
-        ->select('dondathang.*','tinhtrang.*','taikhoan.*')
+        ->select('dondathang.*','tinhtrang.*','khachhang.*')
         ->get();
         
         Session::put('page_focus', $page_focus);
@@ -41,9 +41,9 @@ class OrderController extends Controller
     public function edit_order_status($MaDonHang)
     {
         $edit_status_order = DB::table('dondathang')
-        ->join('taikhoan','taikhoan.MaTaiKhoan','=','dondathang.MaTaiKhoan')
+        ->join('khachhang','khachhang.MaKhachHang','=','dondathang.MaTaiKhoan')
         ->where('MaDonDatHang',$MaDonHang)
-        ->select('dondathang.*','taikhoan.*')
+        ->select('dondathang.*','khachhang.*')
         ->get();
         $all_status_order = DB::table('tinhtrang')->get();
         

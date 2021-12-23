@@ -20,14 +20,15 @@ class UserController extends Controller
     public function edit(){
         return view('User.EditUser');
     }
-    public function upload(){
+    public function upload(Request $request){
         $data = array();
-
         $data['TenDangNhap'] = $_REQUEST['TenKhachHang'];
         $data['diachi'] = $_REQUEST['DiaChi'];
         $data['dienthoai'] = $_REQUEST['DienThoai'];
         $data['Email'] = $_REQUEST['Email'];
+        $data['hinh_anh'] = $_REQUEST['image_user'];
         DB::table('accountlogin')->where('id',$_REQUEST['MaKhachHang'])->update($data);
+      
         return Redirect::to('User-page');
     }
 
@@ -36,6 +37,6 @@ class UserController extends Controller
         $SanPham = DB::table('sanpham')->orderby('MaSanPham','desc')->paginate(6);//show sp mới
         $thuonghieu = DB::table('hangsanxuat')->orderby('MaHangSanXuat','desc')->get();//show hãng sp
         return view('User.ProductInterest')->with('loaisp',$Danhmuc_sp)->with('all_SP',$SanPham)->with('t_h',$thuonghieu);
-      
+
     }
 }

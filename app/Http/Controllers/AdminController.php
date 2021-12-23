@@ -5,28 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Session;
-use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
-Session_start();
+session_start();
 class AdminController extends Controller
 {
-    public function index(){
-        return view('admin_login');
+     public function index(){
+         Session::put('login','Hãy đăng nhập để sử dụng chức năng này!');
+        return view('Login');
     }
     public function show_dashboard(){
         return view('admin.dashboard');
     }
     public function dashboard(Request $request){
+
         $taikhoan = $request->Taikhoan;
         
-        $MatKhau = $request->Matkhau;
+        $MatKhau = md5($request->Matkhau);
         
 
-        $result = DB::table('taikhoan')->where('TenDangNhap',$taikhoan)->where('MatKhau', $MatKhau)->where('MaLoaiTaiKhoan',2)->first();
+        $result = DB::table('accountlogin')->where('Email',$taikhoan)->where('MatKhau', $MatKhau)->where('MaLoaiTaiKhoan',2)->first();
         if($result)
         {
             Session::put('admin_name',$result->TenHienThi);
-            Session::put('admin_id',$result->MaTaiKhoan);
+            Session::put('admin_id',$result->id);
             return Redirect::to('/dashboard');
             
         }
@@ -39,6 +40,9 @@ class AdminController extends Controller
     public function logout(){
         Session::put('admin_name',null);
         Session::put('admin_id',null);
-        return Redirect::to('/admin');
+         return view('Login');
     }
+      
+
+    
 }

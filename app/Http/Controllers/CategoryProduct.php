@@ -9,13 +9,17 @@ use Session;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\dondathang;
-Session_start();
+
 
 class CategoryProduct extends Controller
 {
     public function add_category_product()
     {
-        return view('admin.add_category_product');
+        $type_category_product = DB::table('loaisanpham')->get();
+        $company_category_product = DB::table('hangsanxuat')->get();
+        
+        $manager_category_product = view('admin.add_category_product')->with('type_category_product',$type_category_product)->with('company_category_product',$company_category_product);
+        return view('admin_layout')->with('admin.add_category_product', $manager_category_product);
     }
 
     
@@ -50,16 +54,40 @@ class CategoryProduct extends Controller
     public function save_category_product(Request $request )
     {
         $data = array();
-        $data['TenSanPham'] = $request->category_product_name;
-        $data['MoTa'] = $request->category_product_dest;
+        $data['TenSanPham'] =  $request->category_product_name;
+        
         $data['GiaSanPham'] = $request->category_product_price;
         $data['NgayNhap'] = $request->category_product_date;
         $data['SoLuongTon'] = $request->category_product_quantity;
         $data['MaLoaiSanPham'] = $request->category_product_type;
         $data['MaHangSanXuat'] = $request->category_product_company;
-        DB::table('sanpham')->insert($data);
-        Session::put('message', 'Thêm sản phẩm thành công:');
-        return Redirect::to('add-category-product');
+        $data['MoTa'] = $request->category_product_dest;
+        $getImage1 = $request->file('image1');
+        $getImage2 = $request->file('image2');
+
+        if($getImage1 && $getImage2)
+        {
+            $new_image1 = rand(0,99).'.'.$getImage1->getClientOriginalExtension();
+            $new_image2 = rand(0,99).'.'.$getImage2->getClientOriginalExtension();
+            $getImage1->move('public/uploads/product', $new_image1);
+            $getImage2->move('public/uploads/product', $new_image2);
+            $data['imageSP'] = $new_image1;
+            $data['imageSP2'] = $new_image2;
+            
+            DB::table('sanpham')->insert($data);
+            Session::put('message', 'Thêm sản phẩm thành công:');
+            return Redirect::to('add-category-product');
+        }
+        else
+        {
+            $data['imageSP'] = '';
+            $data['imageSP2'] = '';
+            
+            DB::table('sanpham')->insert($data);
+            Session::put('message', 'Thêm sản phẩm thành công:');
+            return Redirect::to('add-category-product');
+        }
+
     }
     public function edit_category_product($MaSanPham)
     {

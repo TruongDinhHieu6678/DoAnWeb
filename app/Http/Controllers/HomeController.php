@@ -16,10 +16,20 @@ class HomeController extends Controller //class đc tạo để điều hướng
     public function index(){
         $Danhmuc_sp = DB::table('loaisanpham')->orderby('MaloaiSanPham','desc')->get();//show loại sp (danh muc)
         $SanPham = DB::table('sanpham')->orderby('MaSanPham','desc')->paginate(6);//show sp mới
-        $SanPhamz_cu = DB::table('sanpham')->orderby('MaSanPham','asc')->paginate(3);//show sp cũ
+        $SanPhamz_cu = DB::table('sanpham')->orderby('SoLuongBan','desc')->paginate(3);//show sp bán chạy
         $thuonghieu = DB::table('hangsanxuat')->orderby('MaHangSanXuat','desc')->get();//show hãng sp
         return view('page.Home')->with('loaisp',$Danhmuc_sp)->with('all_SP',$SanPham)->with('t_h',$thuonghieu)->with('sp_cu',$SanPhamz_cu);//name page home thuộc Home.blade.php 
     }
+
+      public function search(){
+        $key_words = $_REQUEST['Search'];
+         $Danhmuc_sp = DB::table('loaisanpham')->orderby('MaloaiSanPham','desc')->get();
+         $thuonghieu = DB::table('hangsanxuat')->orderby('MaHangSanXuat','desc')->get();
+       
+        $tim_kiem = DB::table('sanpham')->where('TenSanPham','like','%'.$key_words.'%')->paginate(6);
+        return view('page.Search')->with('loaisp',$Danhmuc_sp)->with('t_h',$thuonghieu)->with('search',$tim_kiem);
+    }
+
 
 
     // test gửi mail
