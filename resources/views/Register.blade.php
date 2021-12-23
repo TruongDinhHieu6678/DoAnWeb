@@ -24,16 +24,16 @@
           {{csrf_field()}}
          
           <?php 
-          $message_email = Session::get('message_email');
-          if($message_email){
-            echo $message_email;
-            Session::put('message_email',null);
+          $message_pss_re = Session::get('message_pss_re');
+          if($message_pss_re){
+            echo $message_pss_re;
+            Session::put('message_pss_re',null);
           }
           ?>
           <input class="text" type="text" name="Username" placeholder="Tên đăng nhập" required="">
-          <input class="text email" type="email" name="email" placeholder="Email" required="">
+          <input class="text email" type="email" name="usermail" placeholder="Email" required="">
           <input class="text" type="password" name="password" placeholder="Mật khẩu" required="">
-          <input class="text w3lpass" type="password" name="password" placeholder="Nhập lại mật khẩu" required="">
+          <input class="text w3lpass" type="password" name="password_re" placeholder="Nhập lại mật khẩu" required="">
           <div class="wthree-text">
             <label class="anim">
               <input type="checkbox" class="checkbox" required="">

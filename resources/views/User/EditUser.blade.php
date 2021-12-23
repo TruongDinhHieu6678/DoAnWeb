@@ -53,10 +53,15 @@
                                <label>mã khách hàng</label>
                                <input value="  <?php echo $acc?>" readonly="readonly" name="MaKhachHang" type="text" class="form-control" required>
                            </div>
+                            <div class="form-group">
+                                    <label>Hình Ảnh</label>
+                                    <input type="file" class="form-control" name="image_user" placeholder="image">
+                                </div>
                            <div class="form-group">
                             <label>Tên khách hàng</label>
                             <input value="<?php echo $name?>" name="TenKhachHang" type="text" class="form-control" required>
                         </div>
+                       
                         <div class="form-group">
                             <label>Địa chỉ</label>
                             <input value="<?php echo $diachi?>" name="DiaChi" type="text" class="form-control" required>
@@ -67,7 +72,7 @@
                         </div>         
                         <div class="form-group">
                             <label>Email</label>
-                            <input value="<?php echo $mail?>" name="Email" type="text" class="form-control" required>
+                            <input value="<?php echo $mail?>" readonly="readonly" name="Email" type="text" class="form-control" required>
                         </div>
 
 

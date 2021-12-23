@@ -38,7 +38,7 @@
 		<div class="col-md-6 login-form-2">
 			<h3>Đăng nhập quản trị</h3>
 
-			<form action="{{URL::to('/Admin-page')}}" method="POST">
+			<form action="{{URL::to('/admin-dashboard')}}" method="POST">
 
 				{{csrf_field()}}
 				<?php 
@@ -49,10 +49,10 @@
 				}
 				?>
 				<div class="form-group">
-					<input type="email" class="form-control" name="tendn" placeholder="Your Email *"/>
+					<input type="email" class="form-control" name="Taikhoan" placeholder="Your Email *"/>
 				</div>
 				<div class="form-group">
-					<input type="password" class="form-control" name="matkhaudn" placeholder="Your Password *"/>
+					<input type="password" class="form-control" name="Matkhau" placeholder="Your Password *"/>
 				</div>
 				<div class="form-group">
 					<input type="submit" class="btnSubmit" value="Đăng nhập" />
@@ -63,6 +63,10 @@
 					<a href="{{URL::to('/Forgot-Password')}}" class="ForgetPwd">Quên mật khẩu?</a>
 				</div>
 				</div>
+				 <div class="modal-footer">
+                       <a href="{{URL::to('/')}}"><button type="button" class="btn btn-primary">Back to Home</button></a>
+              
+                   </div>
 			</form>
 		</div>
 	</div>

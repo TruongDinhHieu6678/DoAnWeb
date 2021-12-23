@@ -1,15 +1,15 @@
 @extends('welcome')
 @section('noidung')
 <div class="features_items"><!--features_items-->
-	<h2 class="title text-center">Danh mục Sản Phẩm</h2>
+	<h2 class="title text-center">Kết Quản Tìm Kiếm Sản Phẩm</h2>
 
 
-	@foreach($sanpham_loai as $key => $sp)
-<div class="col-sm-4">
+	@foreach($search as $key => $sp)
+	<div class="col-sm-4">
 		<div class="product-image-wrapper">
 			<div class="single-products">
 				<div class="productinfo text-center">
-						<form>
+					<form>
 						{{csrf_field()}}
 						<input type="hidden" value="$sp->MaSanPham">
 						<input type="hidden" id="name_product{{$sp->MaSanPham}}" value="{{$sp->TenSanPham}}">
@@ -35,7 +35,6 @@
 	</div>
 
 	@endforeach
-<div class="text-center">{!! $sanpham_loai ->links() !!}</div> 
+	<div class="text-center">{!! $search ->links() !!}</div> 
 </div><!--features_items-->
 @endsection
-

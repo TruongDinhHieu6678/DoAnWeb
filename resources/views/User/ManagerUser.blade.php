@@ -43,6 +43,7 @@
                             </span>
                         </th>
                         <th>ID</th>
+                        <th>Hình</th>
                         <th>Tên</th>
                         <th>Địa Chỉ</th>
                         <th>Điện Thoại</th>
@@ -63,12 +64,15 @@
                         <?php $sdt = Session::get('sdt');?>
                         <?php $diachi = Session::get('diachi');?>
                         <?php $mail = Session::get('mail');?>
+                        <?php $image_user = Session::get('hinh_anh');?>
                         
                         <td><?php echo $acc?></td>
+                        <td><img src="public/frondend/images/<?php echo $image_user?>" height="50" width="50"></td>
                         <td><?php echo $name?></td>
                         <td><?php echo $diachi?></td>
                         <td><?php echo $sdt?></td>
                         <td><?php echo $mail?></td>
+
                         <td>
 
                             <a href="{{URL::to('/Edit-page')}}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>Edit</a>
