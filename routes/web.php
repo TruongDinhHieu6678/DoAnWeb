@@ -60,6 +60,7 @@ Route::get('/delete-cart/{rowId}','GioHangController@delete_cart');
 Route::post('/update-cart-quantity','GioHangController@update_cart_quantity' );
 //Check out
 Route::get('/thanhtoan','CheckoutController@thanhtoan');
+Route::get('/thanhtoan_thanhcong','CheckoutController@thanhtoan_thanhcong');
 
 //send mail
 Route::get('/Mail-page','HomeController@mail' );
