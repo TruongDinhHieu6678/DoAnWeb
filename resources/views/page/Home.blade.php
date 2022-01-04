@@ -19,7 +19,7 @@
 					</form>			
 					<h2 >{{number_format($sp ->GiaSanPham).'VNĐ'}}</h2> <!-- gán cái key đã có trỏ tới thuộc tính cần show -->
 					<p>{{$sp ->TenSanPham}}</p>
-					<a href="{{URL::to('/Cart-page')}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+					<a href="{{URL::to('/chi-tiet-sp/'.$sp -> MaSanPham)}}"><img type="hidden" id="image_product{{$sp->MaSanPham}}" src="{{URL::to('public/frondend/images/'.$sp -> HinhURL)}}" alt=""></a>
 				</div>
 				
 			</div>
