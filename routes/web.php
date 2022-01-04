@@ -53,7 +53,13 @@ Route::get('Product-Interest-page','UserController@Product_Interest');
 Route::get('/Admin-page','AdminController@index' );// cùng 1 page index là khung
 
 //trang giỏ hàng
-Route::get('/Cart-page','CartController@index' );
+Route::post('/chi-tiet-sp/{MaSanPham}','GioHangController@giohang' );
+
+Route::get('/show_cart','GioHangController@show_cart');
+Route::get('/delete-cart/{rowId}','GioHangController@delete_cart');
+Route::post('/update-cart-quantity','GioHangController@update_cart_quantity' );
+//Check out
+Route::get('/thanhtoan','CheckoutController@thanhtoan');
 
 //send mail
 Route::get('/Mail-page','HomeController@mail' );
