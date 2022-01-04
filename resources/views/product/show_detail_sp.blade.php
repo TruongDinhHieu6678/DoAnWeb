@@ -66,17 +66,37 @@
             <h1>{{$sp_dt ->TenSanPham}}</h1>
             <p>Còn : {{$sp_dt ->SoLuongTon}} sản phẩm</p>
             <img src="#" alt="" />
+            <form action="{{URL::to('/chi-tiet-sp/'.$sp_dt->MaSanPham)}}" method="POST">
+              {{ csrf_field() }}
             <span>
                 <span>{{number_format($sp_dt ->GiaSanPham).'VNĐ'}}</span>
                 <label>Số lượng:</label>
                 <input type="number" min="1" name="soluong" value="1" />
-                <a href="{{URL::to('/Cart-page')}}">
-                <button type="button" class="btn btn-fefault cart">
+                <input type="hidden" name="productid_hidden" value="{{$sp_dt -> MaSanPham}}">
+
+               
+                  <!--------------- cart ---------------------------->
+                              <?php $acc = Session::get('acc');
+                                if ($acc != null){
+                                    ?>
+                                     <button onclick="return confirm('Thêm sản pha vào giỏ hàng thành công!')" type="submit" class="btn btn-fefault cart">
                     <i class="fa fa-shopping-cart"></i>
                     Add to cart
                 </button>
-                </a>
+
+                                <?php
+                            }else{
+                                ?>
+                                <button onclick="return confirm('hãy đăng nhập để thêm sản phẩm vào giỏ hàng!')" class="btn btn-fefault cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    Add to cart
+                </button>                          
+                                <?php 
+                            }
+                            ?>
+                
             </span>
+            </form>
             <p><b>Ngày Nhập: </b>{{$sp_dt ->NgayNhap}}</p>
             <p><b>Tình Trạng: </b> Mới</p>
             <p><b>Thương hiệu: </b>{{$sp_dt -> TenHangSanXuat}}</p>
